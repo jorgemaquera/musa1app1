@@ -1,0 +1,83 @@
+<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive, collapsed: collapsed}">
+        <div class="list-group">
+            
+            <!-- MODULO 1 BUS Y CONDUCTOR -->
+    
+            <div class="nested-menu">
+                <a class="list-group-item" (click)="addExpandClass('md01')">
+                    <i class="fa fa-plus"></i>&nbsp;
+                    <span>{{ 'MD01' }}</span>
+                </a>
+                <li class="nested" [class.expand]="showMenu === 'md01'">
+                    <ul class="submenu">
+                        <li>
+                            <a routerLink="/login" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-dashboard"></i>&nbsp;
+                                <span>{{ 'Login' }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </div>
+    
+            <!-- FIN MODULO 1 BUS Y CONDUCTOR -->
+    
+            <div class="nested-menu">
+                <a class="list-group-item" (click)="addExpandClass('pages')">
+                    <i class="fa fa-plus"></i>&nbsp;
+                    <span>{{ 'Plantilla' }}</span>
+                </a>
+                <li class="nested" [class.expand]="showMenu === 'pages'">
+                    <ul class="submenu">
+                        <li>
+                            <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-dashboard"></i>&nbsp;
+                                <span>{{ 'Dashboard' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/charts']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-bar-chart-o"></i>&nbsp;
+                                <span>{{ 'Charts' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/tables']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-table"></i>&nbsp;
+                                <span>{{ 'Tables' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/forms']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-edit"></i>&nbsp;
+                                <span>{{ 'Forms' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/bs-element']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-desktop"></i>&nbsp;
+                                <span>{{ 'Bootstrap Element' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/grid']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-fw fa-wrench"></i>&nbsp;
+                                <span>{{ 'Bootstrap Grid' }}</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a [routerLink]="['/components']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                                <i class="fa fa-th-list"></i>&nbsp;
+                                <span>{{ 'Component' }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </div>
+        </div>
+        <div class="toggle-button" [ngClass]="{collapsed: collapsed}" (click)="toggleCollapsed()">
+            <i class="fa fa-fw fa-angle-double-{{collapsed?'right':'left'}}"></i>&nbsp;
+            <span>{{ 'Collapse Sidebar' }}</span>
+        </div>
+    </nav>
+    

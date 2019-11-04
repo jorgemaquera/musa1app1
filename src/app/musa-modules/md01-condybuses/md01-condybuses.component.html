@@ -1,0 +1,5 @@
+<app-header></app-header>
+<sidebar-md01 (collapsedEvent)="receiveCollapsed($event)"></sidebar-md01>
+<section class="main-container" [ngClass]="{collapsed: collapedSideBar}">
+    <p>md01-condybuses works!</p>
+</section>
