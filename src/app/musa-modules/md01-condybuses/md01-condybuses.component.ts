@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TestService } from 'src/app/services';
 
 @Component({
   selector: 'app-md01-condybuses',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Md01CondybusesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private testService : TestService) { }
+  txt: string;
 
   ngOnInit() {
+    this.txt = this.testService.getGreeting();
   }
+
+  
 
 }
